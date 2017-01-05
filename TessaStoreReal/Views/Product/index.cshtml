@@ -1,0 +1,28 @@
+﻿
+
+@model TessaStoreReal.Models.Product
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> @Model.Name</h2>
+<h3> Size: @Model.Description </h3>
+<h3>Price: @Model.Price</h3>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>
+            Purchase
+        </legend>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Quantity)
+            @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" })
+        </div>
+    </fieldset>
+    @Html.HiddenFor(m => m.Price)
+    @Html.HiddenFor(m => m.Type)
+    @Html.HiddenFor(m => m.ID)
+<input type="submit" class="btn btn-primary" value="Add Product to Cart"/>
+}
+

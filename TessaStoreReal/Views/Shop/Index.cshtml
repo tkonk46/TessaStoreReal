@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TessaStoreReal.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Shop</h2>
+
+@foreach(var p in Model)
+{
+     <div class="well col-xs-12 col-md-4">
+         <a href="@Url.Action("Index", "Product")">
+         <h2> @p.Name</h2>
+         <img src=@p.ImageUrl alt="Product Image" />
+         <h3>@p.Price</h3>
+             </a>
+    </div>
+  
+}
